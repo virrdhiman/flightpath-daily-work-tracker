@@ -19,7 +19,9 @@ Produce a **DRAFT** FlightPath daily work email for human review. Do **not** fin
    - Task list with approximate times and hours
    - Roster hours vs beyond-working-hours
    - Short notes
-5. Email **virrdhiman@gmail.com** via Gmail (Composio):
+5. Email via Gmail (Composio):
+   - **From:** connected account `98765dummy123@gmail.com` (approved)
+   - **To:** `virrdhiman@gmail.com`
    - Subject: `[DRAFT FOR REVIEW] FlightPath daily work — YYYY-MM-DD`
    - Body: markdown-friendly plain text or simple HTML
    - First line must say: `DRAFT — please review before finalizing`
@@ -28,6 +30,9 @@ Produce a **DRAFT** FlightPath daily work email for human review. Do **not** fin
 
 ## Email rules
 
-- Recipient: `virrdhiman@gmail.com` only (unless instructions change).
-- Always label as DRAFT for review.
-- If Gmail fails, leave the draft in `log/` and report the error in the run summary.
+- **From (connected Gmail):** `98765dummy123@gmail.com` — approved by Virender
+- **To:** `virrdhiman@gmail.com` only (unless instructions change)
+- Always label as DRAFT for review
+- If Gmail fails, leave the draft in `log/` and report the error in the run summary
+- Do not switch sender accounts without explicit instruction
+

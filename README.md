@@ -4,7 +4,7 @@ Source of truth for Virender Dhiman’s **FlightPath Infogain** daily work diges
 
 ## Purpose
 
-A Cursor Automation checks out this repo on a schedule (Mon–Sat **20:00 IST**), builds a **DRAFT** day summary from FlightPath work only, and emails it to **virrdhiman@gmail.com** for review. Nothing is treated as final until you approve it.
+A Cursor Automation checks out this repo on a schedule (Mon–Sat **20:00 IST**), builds a **DRAFT** day summary from FlightPath work only, and emails it **from `98765dummy123@gmail.com` to `virrdhiman@gmail.com`** for review. Nothing is treated as final until you approve it.
 
 ## Scope
 
