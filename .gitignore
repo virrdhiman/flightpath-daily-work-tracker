@@ -1,0 +1,24 @@
+# Never track ProductiveIT or personal mirrors
+ProductiveIT*/
+**/ProductiveIT*/
+personal/
+**/personal/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+.vscode/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+
+# Secrets
+credentials.json
+token.json
+*.pem
+*.key
