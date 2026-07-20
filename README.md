@@ -59,9 +59,29 @@ Workbook sheets:
 
 1. **00 How to use** — filter guide  
 2. **01 Dashboard** — KPIs, month bar chart, category pie, phase table  
-3. **02 Daily Log** — every task (AutoFilter by Date / Month / Status / Category)  
+3. **02 Daily Log** — every task (newest date first; AutoFilter by Date / Month / Status / Category)  
 4. **03 Monthly Summary** — month-wise totals  
-5. **04 Day Rollup** — one row per day (best for date-wise review)  
+5. **04 Day Rollup** — one row per day, **latest first** (best for date-wise review)  
+
+## Open on this PC (local)
+
+### Excel workbook
+1. Open folder: `c:\Users\virrd\OneDrive\Desktop\Programs\flightpath-daily-work-tracker\exports\`
+2. Double-click `FlightPath_Daily_Work_2026-04-08_to_2026-07-20.xlsx` (or a month/date export)
+3. Or regenerate: double-click `EXPORT-EXCEL.bat` in the tracker folder
+
+### Tracker project (Git)
+```powershell
+cd c:\Users\virrd\OneDrive\Desktop\Programs\flightpath-daily-work-tracker
+explorer .
+```
+Or clone: `git clone https://github.com/virrdhiman/flightpath-daily-work-tracker.git`
+
+### Interactive dashboard (Cursor Canvas)
+1. Open Cursor on the **Programs** workspace  
+2. Open file:  
+   `C:\Users\virrd\.cursor\projects\c-Users-virrd-OneDrive-Desktop-Programs\canvases\flightpath-daily-work-log.canvas.tsx`  
+3. Use **Open Canvas** / preview beside chat (latest dates show first)
 
 
 ## Attendance markers (confirmed)

@@ -246,6 +246,12 @@ def build_rows(start: date, end: date) -> list[dict]:
     return rows
 
 
+def newest_first(rows: list[dict]) -> list[dict]:
+    """Latest dates first; within a day keep chronological start time."""
+    by_time = sorted(rows, key=lambda r: r["start"] if r["start"] != "—" else "00:00")
+    return sorted(by_time, key=lambda r: r["date"], reverse=True)
+
+
 def style_header(ws, row: int, cols: int) -> None:
     for c in range(1, cols + 1):
         cell = ws.cell(row=row, column=c)
@@ -498,6 +504,7 @@ def write_by_date(wb: Workbook, rows: list[dict]) -> None:
     for r in rows:
         if r["date"] not in dates:
             dates.append(r["date"])
+    # rows already newest-first; keep day rollup in that order
 
     for i, d in enumerate(dates, start=2):
         subset = [r for r in rows if r["date"] == d]
@@ -575,7 +582,7 @@ def write_howto(wb: Workbook) -> None:
 
 
 def export(start: date, end: date, label: str, outfile: Path) -> Path:
-    rows = build_rows(start, end)
+    rows = newest_first(build_rows(start, end))
     wb = Workbook()
     # remove default
     default = wb.active
