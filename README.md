@@ -37,8 +37,32 @@ A Cursor Automation checks out this repo on a schedule (Mon–Sat **20:00 IST**)
 |------|------|
 | [AUTOMATION.md](./AUTOMATION.md) | Prompt the scheduled agent must follow |
 | [TIMELINE.md](./TIMELINE.md) | Confirmed work phases Apr–Jul 2026 |
-| [log/](./log/) | Daily draft / reviewed notes (markdown) |
 | [EXCLUSIONS.md](./EXCLUSIONS.md) | Folders and topics never to include |
+| [export_excel.py](./export_excel.py) | **Excel export** with dashboard + date/month filters |
+| [EXPORT-EXCEL.bat](./EXPORT-EXCEL.bat) | Windows one-click export menu |
+| [log/](./log/) | Daily draft / reviewed notes (markdown) |
+| [exports/](./exports/) | Generated `.xlsx` files (gitignored binaries optional) |
+
+## Excel export (dashboard + date / month)
+
+```bash
+pip install -r requirements.txt
+python export_excel.py                      # full period
+python export_excel.py --month 2026-07      # one month
+python export_excel.py --date 2026-07-20    # one day
+python export_excel.py --from 2026-05-24 --to 2026-06-14
+```
+
+Or double-click `EXPORT-EXCEL.bat`.
+
+Workbook sheets:
+
+1. **00 How to use** — filter guide  
+2. **01 Dashboard** — KPIs, month bar chart, category pie, phase table  
+3. **02 Daily Log** — every task (AutoFilter by Date / Month / Status / Category)  
+4. **03 Monthly Summary** — month-wise totals  
+5. **04 Day Rollup** — one row per day (best for date-wise review)  
+
 
 ## Attendance markers (confirmed)
 
