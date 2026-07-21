@@ -24,3 +24,4 @@
 | 2026-07-09 | On Movement | |
 | 2026-07-10 | On Movement | |
 | 2026-07-20 | Work + beyond hours | Sector 8 meeting with Tarun Sir ~18:00 |
+| 2026-07-21 | Work | MD Tarun 14:00–14:30; HR docs 14:30–17:30 (account opening, visiting card, ID cards); morning tracker/automation/ID tools |

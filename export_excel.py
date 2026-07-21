@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "exports"
 
 START = date(2026, 4, 8)
-END = date(2026, 7, 20)
+END = date(2026, 7, 21)
 
 LEAVE = {date(2026, 5, 14), date(2026, 6, 20), date(2026, 7, 8)}
 ON_MOVEMENT = {date(2026, 7, 9), date(2026, 7, 10)}
@@ -188,6 +188,76 @@ def build_rows(start: date, end: date) -> list[dict]:
                         "end": end_t,
                         "hours": hrs,
                         "overtime": "Yes" if ot else "No",
+                        "title": title,
+                        "detail": detail,
+                    }
+                )
+            continue
+
+        # Special day: 21 Jul — MD Tarun + HR documentation
+        if d == date(2026, 7, 21):
+            day_slots = [
+                (
+                    "09:00",
+                    "11:00",
+                    2.0,
+                    (
+                        "Internal Tools",
+                        "FlightPath daily work tracker & Excel export",
+                        "Updated daily work log, Excel dashboard export (date/month), tracker repo.",
+                    ),
+                ),
+                (
+                    "11:00",
+                    "13:00",
+                    2.0,
+                    (
+                        "Internal Tools",
+                        "ID card generator & digest automation setup",
+                        "FlightPath Infogain ID-card tooling and daily digest automation (Gmail draft).",
+                    ),
+                ),
+                (
+                    "13:30",
+                    "14:00",
+                    0.5,
+                    (
+                        "Planning & Review",
+                        "Prep for MD Tarun meeting & HR doc session",
+                        "Prepared notes for MD meeting and HR documentation agenda.",
+                    ),
+                ),
+                (
+                    "14:00",
+                    "14:30",
+                    0.5,
+                    ("HR Assigned", "Meeting with MD Tarun", "Meeting with MD Tarun (14:00–14:30)."),
+                ),
+                (
+                    "14:30",
+                    "17:30",
+                    3.0,
+                    (
+                        "HR Assigned",
+                        "HR documentation — account opening, visiting card, ID cards",
+                        "Worked with HR on documentation for account opening, visiting cards, and ID cards.",
+                    ),
+                ),
+            ]
+            for start_t, end_t, hrs, meta in day_slots:
+                cat, title, detail = meta
+                rows.append(
+                    {
+                        "date": d.isoformat(),
+                        "weekday": weekday,
+                        "month": month,
+                        "status": "Work",
+                        "phase": phase_label,
+                        "category": cat,
+                        "start": start_t,
+                        "end": end_t,
+                        "hours": hrs,
+                        "overtime": "No",
                         "title": title,
                         "detail": detail,
                     }
