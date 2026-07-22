@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "exports"
 
 START = date(2026, 4, 8)
-END = date(2026, 7, 21)
+END = date(2026, 7, 22)
 
 LEAVE = {date(2026, 5, 14), date(2026, 6, 20), date(2026, 7, 8)}
 ON_MOVEMENT = {date(2026, 7, 9), date(2026, 7, 10)}
@@ -258,6 +258,96 @@ def build_rows(start: date, end: date) -> list[dict]:
                         "end": end_t,
                         "hours": hrs,
                         "overtime": "No",
+                        "title": title,
+                        "detail": detail,
+                    }
+                )
+            continue
+
+        # Special day: 22 Jul — Pathwaynexgen mail, Sec 14 project, Sec 8 HR
+        if d == date(2026, 7, 22):
+            day_slots = [
+                (
+                    "09:00",
+                    "11:00",
+                    2.0,
+                    (
+                        "HR Assigned",
+                        "Pathwaynexgen — add alternative mail ID",
+                        "Configured / added alternative mail ID for the Pathwaynexgen mail account.",
+                        False,
+                    ),
+                ),
+                (
+                    "11:00",
+                    "13:00",
+                    2.0,
+                    (
+                        "Internal Tools",
+                        "Daily work log & agent collaboration",
+                        "FlightPath daily tracker updates, Excel export, tooling with Cursor agent.",
+                        False,
+                    ),
+                ),
+                (
+                    "13:30",
+                    "15:30",
+                    2.0,
+                    (
+                        "Flipkart Automation",
+                        "Project delivery work",
+                        "Continued FlightPath project work before evening site moves.",
+                        False,
+                    ),
+                ),
+                (
+                    "15:30",
+                    "17:30",
+                    2.0,
+                    (
+                        "Flipkart Automation",
+                        "Project work — wrap before Sector 14",
+                        "Project progress ahead of 17:30 return to Sector 14.",
+                        False,
+                    ),
+                ),
+                (
+                    "17:30",
+                    "18:20",
+                    0.8,
+                    (
+                        "Flipkart Automation",
+                        "Sector 14 — project work",
+                        "Returned to Sector 14 at 17:30; worked on the project.",
+                        True,
+                    ),
+                ),
+                (
+                    "18:20",
+                    "19:30",
+                    1.2,
+                    (
+                        "HR Assigned",
+                        "Sector 8 — helping HR",
+                        "Back to Sector 8 from 18:20; supported HR until 19:30 (7:30 PM).",
+                        True,
+                    ),
+                ),
+            ]
+            for start_t, end_t, hrs, meta in day_slots:
+                cat, title, detail, ot = meta
+                rows.append(
+                    {
+                        "date": d.isoformat(),
+                        "weekday": weekday,
+                        "month": month,
+                        "status": "Work",
+                        "phase": phase_label,
+                        "category": cat,
+                        "start": start_t,
+                        "end": end_t,
+                        "hours": hrs,
+                        "overtime": "Yes" if ot else "No",
                         "title": title,
                         "detail": detail,
                     }
