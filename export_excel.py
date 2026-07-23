@@ -354,12 +354,12 @@ def build_rows(start: date, end: date) -> list[dict]:
                 )
             continue
 
-        # Special day: 23 Jul — team support, reports, laptop asset, agent work
+        # Special day: 23 Jul — team support, reports, laptop asset, agent work (10–6, done 22:00)
         if d == date(2026, 7, 23):
             day_slots = [
                 (
-                    "09:00",
-                    "11:00",
+                    "10:00",
+                    "12:00",
                     2.0,
                     (
                         "Internal Tools",
@@ -369,8 +369,8 @@ def build_rows(start: date, end: date) -> list[dict]:
                     ),
                 ),
                 (
-                    "11:00",
-                    "13:00",
+                    "12:00",
+                    "14:00",
                     2.0,
                     (
                         "Team Support",
@@ -380,8 +380,8 @@ def build_rows(start: date, end: date) -> list[dict]:
                     ),
                 ),
                 (
-                    "13:30",
-                    "15:30",
+                    "14:30",
+                    "16:30",
                     2.0,
                     (
                         "Team Support",
@@ -391,14 +391,25 @@ def build_rows(start: date, end: date) -> list[dict]:
                     ),
                 ),
                 (
-                    "15:30",
-                    "17:30",
-                    2.0,
+                    "16:30",
+                    "18:00",
+                    1.5,
                     (
                         "HR Assigned",
                         "Laptop asset purchase support",
                         "Helped with laptop / IT asset purchase process (specs, quotes, or approvals).",
                         False,
+                    ),
+                ),
+                (
+                    "18:00",
+                    "22:00",
+                    4.0,
+                    (
+                        "Internal Tools",
+                        "Complete daily task update with agent",
+                        "Closed today’s work log / tracker update with Cursor agent; complete at ~22:00.",
+                        True,
                     ),
                 ),
             ]

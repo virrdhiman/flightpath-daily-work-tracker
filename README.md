@@ -28,8 +28,8 @@ A Cursor Automation checks out this repo on a schedule (Mon–Sat **20:00 IST**)
 
 ## Roster model
 
-- Work: **8 hours** (09:00–17:30 with lunch 13:00–13:30 = 30 min)
-- Beyond hours: mark after 17:30 (meetings, delivery crunch)
+- Work: **10:00–18:00** with **lunch 14:00–14:30** (30 min)
+- Beyond hours: after 18:00 when needed
 
 ## Files
 

@@ -11,8 +11,8 @@
 ## Working pattern
 
 - Mon–Sat, Sundays off
-- 8h roster + 30 min lunch
-- Overtime only when delivery/meetings run past 17:30
+- **Roster: 10:00–18:00** with **lunch 14:00–14:30** (30 min)
+- Overtime when work continues past 18:00
 
 ## Confirmed special days
 
@@ -26,4 +26,4 @@
 | 2026-07-20 | Work + beyond hours | Sector 8 meeting with Tarun Sir ~18:00 |
 | 2026-07-21 | Work | MD Tarun 14:00–14:30; HR docs 14:30–17:30 (account opening, visiting card, ID cards); morning tracker/automation/ID tools |
 | 2026-07-22 | Work + beyond hours | Pathwaynexgen alternate mail ID; project work; 17:30 Sec 14 project; 18:20–19:30 Sec 8 HR help |
-| 2026-07-23 | Work | Agent collaboration; team help & task assignment; report collection/analysis; laptop asset purchase support |
+| 2026-07-23 | Work + beyond hours | 10:00–18:00 roster (lunch 14:00–14:30); team/reports/laptop asset; agent work; complete ~22:00 |
