@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "exports"
 
 START = date(2026, 4, 8)
-END = date(2026, 7, 22)
+END = date(2026, 7, 23)
 
 LEAVE = {date(2026, 5, 14), date(2026, 6, 20), date(2026, 7, 8)}
 ON_MOVEMENT = {date(2026, 7, 9), date(2026, 7, 10)}
@@ -331,6 +331,74 @@ def build_rows(start: date, end: date) -> list[dict]:
                         "Sector 8 — helping HR",
                         "Back to Sector 8 from 18:20; supported HR until 19:30 (7:30 PM).",
                         True,
+                    ),
+                ),
+            ]
+            for start_t, end_t, hrs, meta in day_slots:
+                cat, title, detail, ot = meta
+                rows.append(
+                    {
+                        "date": d.isoformat(),
+                        "weekday": weekday,
+                        "month": month,
+                        "status": "Work",
+                        "phase": phase_label,
+                        "category": cat,
+                        "start": start_t,
+                        "end": end_t,
+                        "hours": hrs,
+                        "overtime": "Yes" if ot else "No",
+                        "title": title,
+                        "detail": detail,
+                    }
+                )
+            continue
+
+        # Special day: 23 Jul — team support, reports, laptop asset, agent work
+        if d == date(2026, 7, 23):
+            day_slots = [
+                (
+                    "09:00",
+                    "11:00",
+                    2.0,
+                    (
+                        "Internal Tools",
+                        "Agent collaboration — FlightPath tracker & tooling",
+                        "Worked with Cursor agent on daily work log, Excel/tracker updates, and tooling.",
+                        False,
+                    ),
+                ),
+                (
+                    "11:00",
+                    "13:00",
+                    2.0,
+                    (
+                        "Team Support",
+                        "Helping team & assigning tasks",
+                        "Supported team members and assigned tasks with owners and expectations.",
+                        False,
+                    ),
+                ),
+                (
+                    "13:30",
+                    "15:30",
+                    2.0,
+                    (
+                        "Team Support",
+                        "Collect reports & analyse",
+                        "Took team reports, reviewed status, and analysed findings for follow-ups.",
+                        False,
+                    ),
+                ),
+                (
+                    "15:30",
+                    "17:30",
+                    2.0,
+                    (
+                        "HR Assigned",
+                        "Laptop asset purchase support",
+                        "Helped with laptop / IT asset purchase process (specs, quotes, or approvals).",
+                        False,
                     ),
                 ),
             ]
